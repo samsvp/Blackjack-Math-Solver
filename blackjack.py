@@ -154,7 +154,9 @@ def solve(numbers, operations, result=21, join_op="",
     """
     assert len(constants) == len(constants_op)
 
-    if not join_op: return _solve(numbers, operations, result)
+    if not join_op: 
+        if type(operations[0] == list): operations = operations[0]
+        return _solve(numbers, operations, result)
 
     if type(join_op) != list: join_op = [join_op]
     permutations = get_permutations(numbers)
