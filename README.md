@@ -1,5 +1,5 @@
 # Blackjack-Math-Solver
-A solver for the game "Blackjack Math"
+A solver for the game ["Blackjack Math"](https://store.steampowered.com/app/1341220/BlackJack_Math/?l=brazilian)
 
 ## Usage
 
