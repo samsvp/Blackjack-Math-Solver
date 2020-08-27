@@ -147,7 +147,7 @@ def solve(numbers, operations, result=21, join_op="",
     result -> desired result
     join_op -> operator to join the expressions
     constants -> tuple of constants to be insert and after which char. (e.g if constants
-    is [("2",")",1)] then the number "2" will be inserted after the first ")")
+    is [("2",1)] then the number "2" will be inserted after the first ")")
     constant_op -> operator that precedes the constant
     returns the right order of numbers given the operations
     and desired result
@@ -179,7 +179,7 @@ def solve(numbers, operations, result=21, join_op="",
         #insert constants
         for i, const in enumerate(constants):
             expression = insert_constant(expression, const[0], 
-                                        (const[1], const[2]), constants_op[i])
+                                        (')', const[1]), constants_op[i])
         
         # Change any letter from the expression given by the constants
         expression = replace_letters(expression)
@@ -202,9 +202,9 @@ def solve(numbers, operations, result=21, join_op="",
 
 
 if __name__ == "__main__":
-    n = ['J',-6,'A',3,'-A']
-    o = [['+','-'],['+']]
-    join_op = ['-']
-    c = []
-    c_op = []
+    n = ['A',8,'-K',-3,-9,-7]
+    o = [['/'],['-'],['+']]
+    join_op = ['*','+']
+    c = [(6, 1), (4, 2)]
+    c_op = ['/', '*']
     solve(n,o,21,join_op,c,c_op)
